@@ -48,16 +48,17 @@ g: gedanken
 
 # Initialize Controllers
   [x] a: `git checkout -b initialize-controllers`
-  [ ] g: Design routes
-  [ ] c: Complete routes
+  [x] g: Design routes
+  [x] c: Complete routes
   [x] c: Create all controller files
+  [x] c: Add all route methods to controllers
   [x] c: Create controller test files (empty)
-  [ ] a: Commit changes, create pull request, and merge
+  [x] a: Commit changes, create pull request, and merge
 
 # Initialize Views
-  [ ] a: `git checkout -b initialize-views`
-  [ ] c: Create a blank identifying view for each route
-  [ ] a: Commit changes, create pull request, and merge
+  [x] a: `git checkout -b initialize-views`
+  [x] c: Create a blank identifying view for each route
+  [x] a: Commit changes, create pull request, and merge
 
 # Create Database Seed
   [ ] a: `git checkout -b create-database-seed`
