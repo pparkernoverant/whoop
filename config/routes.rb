@@ -62,7 +62,7 @@ Rails.application.routes.draw do
 
   post '/login', to: 'sessions#create'
 
-  resources :businesses, except [:destroy] do
+  resources :businesses, except: [:destroy] do
     resources :reviews, only: [:create]
   end
 
