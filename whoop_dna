@@ -42,15 +42,16 @@ g: gedanken
   [x] a: Generate model migrations
   [x] c: Complete model migrations
   [x] a: `rake db:migrate`
-  [ ] c: Create model test skeletons for db relationships
-  [ ] t: Pass all model tests
-  [ ] a: Commit changes, create pull request, and merge
+  [x] c: Create model test skeletons for db relationships
+  [x] t: Pass all model tests
+  [x] a: Commit changes, create pull request, and merge
 
 # Initialize Controllers
-  [ ] a: `git checkout -b initialize-controllers`
+  [x] a: `git checkout -b initialize-controllers`
   [ ] g: Design routes
   [ ] c: Complete routes
-  [ ] c: Create controller test files (empty)
+  [x] c: Create all controller files
+  [x] c: Create controller test files (empty)
   [ ] a: Commit changes, create pull request, and merge
 
 # Initialize Views
