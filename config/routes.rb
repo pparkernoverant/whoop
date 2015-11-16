@@ -53,4 +53,19 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root to: 'businesses#index'
+
+  get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
+  get '/register', to: 'users#new'
+
+  post '/login', to: 'sessions#create'
+
+  resources :businesses, except [:destroy] do
+    resources :reviews, only: [:create]
+  end
+
+  resources :users, only: [:show, :create, :edit, :update]
+  resources :session, only: [:create]
 end
