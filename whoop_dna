@@ -1,0 +1,88 @@
+Whoop Development Process
+
+Created GitHub repository
+`rails new Whoop`
+pushed first commit to GitHub
+
+[1] `rails new Whoop`
+
+
+
+
+-----------
+
+WHOOP DNA
+a: actions
+t: test
+c: code
+g: gedanken
+
+
+# Initialize Project
+  ## Setup GitHub
+    [x] a: Create GitHub repository
+    [x] a: Create rails project with `rails new Whoop`
+    [x] c: Complete `.gitignore`
+
+  ## Setup Gems
+    [x] g: Decide what external gems to use initially
+    [x] c: Update `Gemfile.rb`
+    [x] a: `bundle install`
+
+  ## Setup PostgreSQL Database
+    [x] c: Complete `database.yml`
+    [x] a: `rake db:create:all`
+
+  ## Git Push
+    [x] a: Push first commit to GitHub
+
+# Initialize Models
+  [x] a: `git checkout -b initialize-models`
+  [x] g: Design models and db relationships
+  [x] a: Generate model migrations
+  [x] c: Complete model migrations
+  [x] a: `rake db:migrate`
+  [ ] c: Create model test skeletons for db relationships
+  [ ] t: Pass all model tests
+  [ ] a: Commit changes, create pull request, and merge
+
+# Initialize Controllers
+  [ ] a: `git checkout -b initialize-controllers`
+  [ ] g: Design routes
+  [ ] c: Complete routes
+  [ ] c: Create controller test files (empty)
+  [ ] a: Commit changes, create pull request, and merge
+
+# Initialize Views
+  [ ] a: `git checkout -b initialize-views`
+  [ ] c: Create a blank identifying view for each route
+  [ ] a: Commit changes, create pull request, and merge
+
+# Create Database Seed
+  [ ] a: `git checkout -b create-database-seed`
+  [ ] c: Complete `seeds.rb`
+  [ ] a: `rake db:seed`
+  [ ] a: Commit changes, create pull request, and merge
+
+% For Each Controller
+  ## Create Test Spec
+    [ ] a: `git checkout -b [name]-controller-spec`
+    [ ] c: Create test spec
+    [ ] t: Pass all controller tests
+    [ ] a: Commit changes, create pull request, and merge
+
+
+# Setup RSPEC
+'rails generate rspec:install'
+
+# Feature Tests
+
+# Styling
+  ## Create Style
+  ## Remove Unused Views
+
+
+* move spec code to macros
+* use partials in views
+*
+
