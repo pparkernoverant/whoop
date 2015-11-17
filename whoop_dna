@@ -61,10 +61,10 @@ g: gedanken
   [x] a: Commit changes, create pull request, and merge
 
 # Create Database Seed
-  [ ] a: `git checkout -b create-database-seed`
-  [ ] c: Complete `seeds.rb`
-  [ ] a: `rake db:seed`
-  [ ] a: Commit changes, create pull request, and merge
+  [x] a: `git checkout -b create-database-seed`
+  [x] c: Complete `seeds.rb`
+  [x] a: `rake db:seed`
+  [x] a: Commit changes, create pull request, and merge
 
 % For Each Controller
   ## Create Test Spec
@@ -72,6 +72,10 @@ g: gedanken
     [ ] c: Create test spec
     [ ] t: Pass all controller tests
     [ ] a: Commit changes, create pull request, and merge
+
+
+# Setup Fabricate
+  [x] create a fabricate for each model
 
 
 # Setup RSPEC
@@ -87,4 +91,15 @@ g: gedanken
 * move spec code to macros
 * use partials in views
 *
+
+----------
+QUESTIONS:
+Writing spec for PATCH and PUT update? DRY
+
+How is my solution to making sure the user is the current user for editing profile info?
+
+
+user update: help? I cant update attributes with validation without password
+
+
 
