@@ -74,6 +74,13 @@ g: gedanken
     [ ] a: Commit changes, create pull request, and merge
 
 
+users controller
+businesses controller
+reviews controller
+sessions controller
+
+deploy to heroku
+
 # Setup Fabricate
   [x] create a fabricate for each model
 
