@@ -7,4 +7,6 @@ describe Review do
 
   # validation: rating
   it { should validate_presence_of :rating }
+  it { should validate_presence_of :business_id }
+  it { should validate_presence_of :user_id }
 end

@@ -109,4 +109,11 @@ How is my solution to making sure the user is the current user for editing profi
 user update: help? I cant update attributes with validation without password
 
 
+in def create, why not use new then save rather than create?
+
+in def review params, do I include business_id or set it in create?
+
+for reviews: validating the presence of businessid and userid
+
+
 
