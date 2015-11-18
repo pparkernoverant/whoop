@@ -11,32 +11,52 @@ describe BusinessesController do
   end
 
   describe 'POST create' do
-    context 'with valid input' do
-      before { post :create, business: Fabricate.attributes_for(:business) }
+    context 'with authenticated user' do
+      before { set_current_user }
 
-      it 'creates the business' do
-        expect(Business.count).to eq(1)
+      context 'with valid input' do
+        before { post :create, business: Fabricate.attributes_for(:business) }
+
+        it 'creates the business' do
+          expect(Business.count).to eq(1)
+        end
+
+        it 'redirects to the business index page' do
+          expect(response).to redirect_to businesses_path
+        end
+
+        it 'displays a flash notice' do
+          expect(flash[:notice]).to be_present
+        end
       end
 
-      it 'redirects to the business index page' do
-        expect(response).to redirect_to businesses_path
-      end
+      context 'with invalid input' do
+        let!(:business_1) { Fabricate(:business) }
+        before { post :create, business: Fabricate.attributes_for(:business).merge(name: business_1.name) }
 
-      it 'displays a flash notice' do
-        expect(flash[:notice]).to be_present
+        it 'does not create the business' do
+          expect(Business.count).to eq(1)
+        end
+
+        it 'renders the :new template' do
+          expect(response).to render_template :new
+        end
+
+        it 'displays a flash error' do
+          expect(flash[:error]).to be_present
+        end
       end
     end
 
-    context 'with invalid input' do
-      let!(:business_1) { Fabricate(:business) }
-      before { post :create, business: Fabricate.attributes_for(:business).merge(name: business_1.name) }
+    context 'with unauthenticated user' do
+      before { post :create, business: Fabricate.attributes_for(:business) }
 
       it 'does not create the business' do
-        expect(Business.count).to eq(1)
+        expect(Business.count).to eq(0)
       end
 
-      it 'renders the :new template' do
-        expect(response).to render_template :new
+      it 'redirects to the root page' do
+        expect(response).to redirect_to root_path
       end
 
       it 'displays a flash error' do
@@ -46,9 +66,31 @@ describe BusinessesController do
   end
 
   describe 'GET new' do
-    it 'sets @business' do
-      get :new
-      expect(assigns(:business)).to be_instance_of(Business)
+    context 'with authenticated user' do
+      before do
+        set_current_user
+        get :new
+      end
+
+      it 'sets @business' do
+        expect(assigns(:business)).to be_instance_of(Business)
+      end
+
+      it 'renders the :new template' do
+        expect(response).to render_template :new
+      end
+    end
+
+    context 'with unauthenticated user' do
+      before { get :new }
+
+      it 'redirects to the root page' do
+        expect(response).to redirect_to root_path
+      end
+
+      it 'displays a flash error' do
+        expect(flash[:error]).to be_present
+      end
     end
   end
 
@@ -56,11 +98,4 @@ describe BusinessesController do
     # Nothing to test here
   end
 
-  describe 'PATCH update' do
-
-  end
-
-  describe 'PUT update' do
-
-  end
 end
