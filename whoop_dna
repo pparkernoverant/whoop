@@ -115,5 +115,7 @@ in def review params, do I include business_id or set it in create?
 
 for reviews: validating the presence of businessid and userid
 
+in sessions controller should I be rendering login page or redirecting? invalid creds
 
+sessions controller: is it safe to be passing password through params?
 
