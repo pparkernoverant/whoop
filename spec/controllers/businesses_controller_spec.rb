@@ -95,6 +95,7 @@ describe BusinessesController do
   end
 
   describe 'GET show' do
+    it 'sets the @business'
     # Nothing to test here
   end
 

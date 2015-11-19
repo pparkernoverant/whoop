@@ -71,6 +71,10 @@ g: gedanken
 
 # Create Views
   [ ] a: remove unused views
+  ## Add a header/navbar
+    [ ] c: add header code to `views/layouts/application.html.erb`
+    [ ] c: create header code in `views/shared/_header.html.erb`
+
 
 # Sluggify Users
 
@@ -119,3 +123,4 @@ in sessions controller should I be rendering login page or redirecting? invalid 
 
 sessions controller: is it safe to be passing password through params?
 
+sessions controller: how to pass passwords through form_tag?
