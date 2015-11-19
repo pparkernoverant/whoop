@@ -1,15 +1,3 @@
-Whoop Development Process
-
-Created GitHub repository
-`rails new Whoop`
-pushed first commit to GitHub
-
-[1] `rails new Whoop`
-
-
-
-
------------
 
 WHOOP DNA
 a: actions
@@ -28,6 +16,9 @@ g: gedanken
     [x] g: Decide what external gems to use initially
     [x] c: Update `Gemfile.rb`
     [x] a: `bundle install`
+
+  ## Setup RSPEC
+  [x] a: `rails generate rspec:install`
 
   ## Setup PostgreSQL Database
     [x] c: Complete `database.yml`
@@ -66,27 +57,37 @@ g: gedanken
   [x] a: `rake db:seed`
   [x] a: Commit changes, create pull request, and merge
 
-% For Each Controller
-  ## Create Test Spec
-    [ ] a: `git checkout -b [name]-controller-spec`
-    [ ] c: Create test spec
-    [ ] t: Pass all controller tests
-    [ ] a: Commit changes, create pull request, and merge
-
-
-users controller
-businesses controller
-reviews controller
-sessions controller
-
-deploy to heroku
-
 # Setup Fabricate
-  [x] create a fabricate for each model
+  [x] a: `git checkout -b initialize-fabricate`
+  [x] c: Create a Fabricate file for each model
+  [x] a: Commit changes, create pull request, and merge
+
+% For Each Controller: [users, businesses, reviews, sessions]
+  ## Create Test Spec
+    [x] a: `git checkout -b spec/[name]-controller`
+    [x] c: Create test spec
+    [x] t: Pass all controller tests
+    [x] a: Commit changes, create pull request, and merge
+
+# Create Views
+  [ ] a: remove unused views
+
+# Sluggify Users
+
+# Sluggify Businesses
+
+# Deploy
+  [ ] a: deploy to Heroku
+
+# Create ApplicationController
+
+# Setup Bootstrap
 
 
-# Setup RSPEC
-'rails generate rspec:install'
+
+# ApplicationHelper
+
+
 
 # Feature Tests
 
@@ -97,7 +98,6 @@ deploy to heroku
 
 * move spec code to macros
 * use partials in views
-*
 
 ----------
 QUESTIONS:

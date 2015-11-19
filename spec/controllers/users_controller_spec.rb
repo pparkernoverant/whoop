@@ -26,7 +26,7 @@ describe UsersController do
     end
 
     context 'with invalid input' do
-      before { post :create, user: { username: 'test_username', email: 'test_email'} }
+      before { post :create, user: { username: 'test_username', email: 'test_email' } }
 
       it 'does not create the user' do
         expect(User.count).to eq(0)

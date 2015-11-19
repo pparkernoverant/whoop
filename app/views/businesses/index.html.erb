@@ -1,1 +1,5 @@
-businesses index
+<%= render 'shared/content_title', title: 'All Businesses' %>
+
+<% @businesses.each do |business| %>
+  <%= render 'business', business: business %>
+<% end %>
