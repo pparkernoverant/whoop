@@ -9,8 +9,8 @@
 User.create(email: 'test_user_1@test.com', username: 'test_user_1', password: 'test')
 User.create(email: 'test_user_2@test.com', username: 'test_user_2', password: 'test')
 
-Business.create(name: 'test_business_1')
-Business.create(name: 'test_business_2')
+Business.create(name: 'test_business_1', description: 'Test business 1.')
+Business.create(name: 'test_business_2', description: 'Test business 2.')
 
 Review.create(user: User.find_by(username: 'test_user_1'), business: Business.find_by(name: 'test_business_1'), content: 'test review 1', rating: '4')
 Review.create(user: User.find_by(username: 'test_user_1'), business: Business.find_by(name: 'test_business_2'), content: 'test review 2', rating: '3')

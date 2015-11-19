@@ -1,5 +1,6 @@
 class BusinessesController < ApplicationController
   before_action :require_user, only: [:new, :create]
+  before_action :set_business, only: [:show]
 
   def index
     @businesses = Business.all
@@ -27,6 +28,10 @@ class BusinessesController < ApplicationController
 
   def business_params
     params.require(:business).permit(:name, :description)
+  end
+
+  def set_business
+    @business = Business.find_by id: params[:id]
   end
 
 end
