@@ -1,5 +1,9 @@
 <%= render 'shared/content_title', title: 'All Businesses' %>
 
 <% @businesses.each do |business| %>
-  <%= render 'business', business: business %>
+  <div class="row">
+    <div class="col-md-6 well">
+      <%= render 'business_blurb', business: business %>
+    </div>
+  </div>
 <% end %>

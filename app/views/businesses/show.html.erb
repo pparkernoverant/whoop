@@ -1,4 +1,12 @@
-<%= render 'shared/content_title', title: @business.name %>
+<%= render 'shared/content_title', title: "Business Profile: #{@business.name}" %>
 
-<h3>Description</h3>
-<p><%= @business.description %></p>
+<div class="well">
+  <dl class="dl-horizontal">
+    <dt>Name:</dt>
+    <dd><%= @business.name %></dd>
+    <dt>Description:</dt>
+    <dd><%= @business.description %></dd>
+  </dl>
+</div>
+
+<!-- reviews go here -->
