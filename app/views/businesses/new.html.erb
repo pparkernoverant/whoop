@@ -1,1 +1,18 @@
-businesses new
+<%= render 'shared/content_title', title: 'Add New Business' %>
+
+<div class="well">
+  <%= render 'shared/form_errors', obj: @business %>
+  <%= form_for @business do |f| %>
+    <div class="control-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, rows: 5 %>
+    </div>
+
+    <%= f.submit 'Create', class: 'btn btn-success' %>
+  <% end %>
+</div>
