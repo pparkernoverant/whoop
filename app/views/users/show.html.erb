@@ -1,1 +1,10 @@
-users show
+<%= render 'shared/content_title', title: "User Profile: #{@user.username}" %>
+
+<div class="well">
+  <dl class="dl-horizontal">
+    <dt>Username:</dt>
+    <dd><%= @user.username %></dd>
+  </dl>
+</div>
+
+<!-- Reviews go here -->

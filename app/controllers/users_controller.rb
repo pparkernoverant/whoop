@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Your account has been created.'
       redirect_to root_path
     else
-      flash[:error] = 'Your account has not been created.'
+      flash.now[:error] = 'Your account has not been created.'
       render :new
     end
   end
@@ -24,11 +24,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       flash[:notice] = 'Your profile has been updated.'
       redirect_to user_path(@user)
     else
-      flash[:error] = 'Your profile has not been updated.'
+      flash.now[:error] = 'Your profile has not been updated.'
       render :edit
     end
   end

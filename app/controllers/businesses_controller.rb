@@ -19,7 +19,7 @@ class BusinessesController < ApplicationController
       flash[:notice] = 'The business has been created.'
       redirect_to businesses_path
     else
-      flash[:error] = 'The business has not been created'
+      flash.now[:error] = 'The business has not been created'
       render :new
     end
   end

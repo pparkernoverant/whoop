@@ -93,6 +93,11 @@ g: gedanken
 
 
 
+#setup header
+#setup messages for flash alerts
+#setup form errors shared
+#setup content title (specific)
+
 # Feature Tests
 
 # Styling
@@ -109,10 +114,6 @@ Writing spec for PATCH and PUT update? DRY
 
 How is my solution to making sure the user is the current user for editing profile info?
 
-
-user update: help? I cant update attributes with validation without password
-
-
 in def create, why not use new then save rather than create?
 
 in def review params, do I include business_id or set it in create?
@@ -124,3 +125,5 @@ in sessions controller should I be rendering login page or redirecting? invalid 
 sessions controller: is it safe to be passing password through params?
 
 sessions controller: how to pass passwords through form_tag?
+
+When invalid input is entred into the register page, the err messages come up, but the URL changes to /users instead of /register
